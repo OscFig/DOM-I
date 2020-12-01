@@ -44,12 +44,51 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //      -nav-
 // let navBar = document.querySelectorAll("a");
-let navBar = document.getElementsByTagName("a");
+let navBar = document.querySelectorAll("nav a");
+let count = 1;
+navBar.forEach(item => {
+  item.textContent = siteContent.nav[`nav-item-${count}`];
+  count++;
+});
 // console.log(navBar)
-// navBar[0].txtContent = siteContent["nav"]["nav-item-1"];
+// navBar[0].txtContent = siteContent["nav"]["nav-item-1"];-----why does this not work???----
 
 
-//      -cta-
-let ctaArr = document.querySelector(".cta");
-// console.log(ctaArr)
-ctaImage.setAttribute("src", siteContent["cta"]["img-src"]);
+//      -cta h1-
+let ctah1 = document.querySelector(".cta-text h1");
+ctah1.textContent = siteContent['cta']['h1'];
+
+//     -cta button-
+let ctaButton = document.querySelector('.cta button');
+ctaButton.textContent = siteContent['cta']['button'];
+
+//      -cta imgSrc-
+let ctaImg = document.querySelector('#cta-img');
+ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+
+//     ---main content---
+//      -features-h4-
+let allh4 = document.querySelectorAll('.main-content h4');
+let h4Arr = Array.from(allh4);
+
+//      -content-p-
+let allP = document.querySelectorAll('.main-content p');
+let pArr = Array.from(allP);
+
+//      -add content- h4
+h4Arr[0].textContent = siteContent['main-content']['features-h4'];
+h4Arr[1].textContent = siteContent['main-content']['about-h4'];
+h4Arr[2].textContent = siteContent['main-content']['services-h4'];
+h4Arr[3].textContent = siteContent['main-content']['product-h4'];
+h4Arr[4].textContent = siteContent['main-content']['vision-h4'];
+
+//      -add content- p
+pArr[0].textContent = siteContent['main-content']['features-content'];
+pArr[1].textContent = siteContent['main-content']['about-content'];
+pArr[2].textContent = siteContent['main-content']['services-content'];
+pArr[3].textContent = siteContent['main-content']['product-content'];
+pArr[4].textContent = siteContent['main-content']['vision-content'];
+
+//      -midImage-
+let midImg = document.querySelector('.middle-img');
+midImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
