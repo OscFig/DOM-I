@@ -35,8 +35,21 @@ const siteContent = {
   "footer": {
     "copyright" : "Copyright Great Idea! 2018"
   },
-};
+};``
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+//      -nav-
+// let navBar = document.querySelectorAll("a");
+let navBar = document.getElementsByTagName("a");
+// console.log(navBar)
+// navBar[0].txtContent = siteContent["nav"]["nav-item-1"];
+
+
+//      -cta-
+let ctaArr = document.querySelector(".cta");
+// console.log(ctaArr)
+ctaImage.setAttribute("src", siteContent["cta"]["img-src"]);
